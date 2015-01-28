@@ -51,5 +51,4 @@ class TestPlugin extends Herbie\Plugin
     {
         // $event['segment'];
     }
-
 }

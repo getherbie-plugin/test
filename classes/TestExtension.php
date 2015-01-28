@@ -32,7 +32,7 @@ class TestExtension extends \Twig_Extension
     {
         $options = ['is_safe' => ['html']];
         return [
-            new \Twig_SimpleFunction('test', function() {
+            new \Twig_SimpleFunction('test', function () {
                 $this->app['assets']->addCss('@plugin/test/assets/test.css');
                 echo "TEST.";
             }, $options),

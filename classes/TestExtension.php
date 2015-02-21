@@ -5,16 +5,16 @@ namespace herbie\plugin\test\classes;
 class TestExtension extends \Twig_Extension
 {
     /**
-     * @var \Herbie\Application
+     * @var Assets
      */
-    protected $app;
+    protected $assets;
 
     /**
-     * @param Application $app
+     * @param Assets $app
      */
-    public function __construct($app)
+    public function __construct($assets)
     {
-        $this->app = $app;
+        $this->assets = $assets;
     }
 
     /**
@@ -33,7 +33,7 @@ class TestExtension extends \Twig_Extension
         $options = ['is_safe' => ['html']];
         return [
             new \Twig_SimpleFunction('test', function () {
-                $this->app['assets']->addCss('@plugin/test/assets/test.css');
+                $this->assets->addCss('@plugin/test/assets/test.css');
                 echo "TEST.";
             }, $options),
         ];

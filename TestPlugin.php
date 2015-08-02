@@ -19,7 +19,10 @@ class TestPlugin extends Herbie\Plugin
 
     public function onTwigInitialized(Herbie\Event $event)
     {
-        $event['twig']->addExtension(new TestExtension($event['app']['assets']));
+        $assets = $event->getService('Assets');
+        #$assets = $this->getService('Assets');
+        $testExtension = new TestExtension($assets);
+        $event['twig']->addExtension($testExtension);
     }
 
     public function onPluginsInitialized(Herbie\Event $event)

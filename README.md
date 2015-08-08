@@ -1,6 +1,6 @@
 # Herbie Test Plugin
 
-`Test` ist ein [Herbie](http://github.com/getherbie/herbie) Plugin, um die Pluginarchitektur zu testen.
+`Test` ist ein [Herbie](http://github.com/getherbie/herbie) Plugin, um die Plugin- und Eventarchitektur zu testen.
 
 ## Installation
 

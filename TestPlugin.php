@@ -17,41 +17,22 @@ use Herbie;
 class TestPlugin extends Herbie\Plugin
 {
 
-    public function onTwigInitialized(Herbie\Event $event)
+    public function onTwigInitialized($twig)
     {
-        $assets = $event->getService('Assets');
-        #$assets = $this->getService('Assets');
+        $assets = $this->getService('Assets');
         $testExtension = new TestExtension($assets);
-        $event['twig']->addExtension($testExtension);
+        $twig->addExtension($testExtension);
     }
 
-    public function onPluginsInitialized(Herbie\Event $event)
-    {
-        // $event['plugins'];
-    }
+    // public function onPluginsInitialized($pluginManager) { }
 
-    public function onOutputGenerated(Herbie\Event $event)
-    {
-        // $event['response'];
-    }
+    // public function onOutputGenerated($null, array $attributes) { }
 
-    public function onOutputRendered(Herbie\Event $event)
-    {
-        // no params
-    }
+    // public function onOutputRendered($null, array $attributes) { }
 
-    public function onPageLoaded(Herbie\Event $event)
-    {
-        // $event['page'];
-    }
+    // public function onPageLoaded($page) { }
 
-    public function onContentSegmentLoaded(Herbie\Event $event)
-    {
-        // $event['segment'];
-    }
+    // public function onRenderContent($content, array $attributes) { }
 
-    public function onContentSegmentRendered(Herbie\Event $event)
-    {
-        // $event['segment'];
-    }
+    // public function onContentSegmentRendered($null, array $attributes) { }
 }

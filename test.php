@@ -1,25 +1,20 @@
 <?php
 
-/**
- * This file is part of Herbie.
- *
- * (c) Thomas Breuss <www.tebe.ch>
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
-
-namespace herbie\plugin\test;
-
+use Herbie\DI;
+use Herbie\Hook;
 use herbie\plugin\test\classes\TestExtension;
-use Herbie;
 
-class TestPlugin extends Herbie\Plugin
+class TestPlugin
 {
 
-    public function onTwigInitialized($twig)
+    public static function install()
     {
-        $assets = $this->getService('Assets');
+        Hook::attach('twigInitialized', ['TestPlugin', 'addTwigExtension']);
+    }
+
+    public static function addTwigExtension($twig)
+    {
+        $assets = DI::get('Assets');
         $testExtension = new TestExtension($assets);
         $twig->addExtension($testExtension);
     }
@@ -36,3 +31,5 @@ class TestPlugin extends Herbie\Plugin
 
     // public function onContentSegmentRendered($null, array $attributes) { }
 }
+
+TestPlugin::install();

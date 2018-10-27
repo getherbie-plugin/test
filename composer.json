@@ -1,5 +1,5 @@
 {
-    "name": "getherbie-plugin/test",
+    "name": "getherbie/plugin-test",
     "homepage": "https://www.getherbie.org",
     "description": "Test Plugin for Herbie.",
     "keywords": ["herbie", "plugin", "test"],        

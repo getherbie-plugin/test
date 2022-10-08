@@ -1,4 +1,5 @@
 {
+    "abandoned": true,
     "name": "getherbie/plugin-test",
     "homepage": "https://www.getherbie.org",
     "description": "Test Plugin for Herbie.",
